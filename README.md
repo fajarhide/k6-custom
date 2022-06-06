@@ -18,20 +18,13 @@ echo "user1@email.com,user2@gmal.com" > email.txt
 
 Update `.env` file using parameter here :
 
-`URL` is target website for load test, 
-example : `https://www.detik.com` or using path `https://www.detik.com/redaksi`
-
-`DURATION` is a string specifying the total duration of the test run, 
-example : `5s` or `1m` or `1h`
-
-`CONCURRENT` is a number specifying the number to run concurrently, 
-example: `10` or `100`
-
-`SENDER` is a email sender location in `FROM:` 
-example: `user@mail.com`
-
-`TITLE` is Subject email 
-example: `Load test using K6`
+| Parameter        | Description                                                | Example                           |
+| --------------- |:-----------------------------------------------------------:| ---------------------------------:|
+| `URL`           | target website for load test  | `https://www.detik.com` or using path `https://www.detik.com/redaksi` |
+| `DURATION`      | a string specifying the total duration of the test run      |   `5s` or `1m` or `1h` |
+| `CONCURRENT`      | a number specifying the number to run concurrently    |   `10` or `100` |
+| `SENDER`      | a email sender location in `FROM:`       |  `user@mail.com` |
+| `TITLE`      | Subject email       |    `Load test using K6` |
 
 ## Usage Command Mode Running
 
