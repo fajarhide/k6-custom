@@ -7,7 +7,7 @@ CONCURRENT=$(cat .env | grep  'CONCURRENT=' | awk -F'=' '{print $2}')
 SENDER=$(cat .env | grep  'SENDER=' | awk -F'=' '{print $2}')
 TITLE=$(cat .env | grep  'TITLE=' | awk -F'=' '{print $2}')
 # run load test
-k6 run -e URL=$URL --duration $DURATION --vus $CONCURRENT script.js;
+k6 run -e URL=$URL --duration $DURATION --vus $CONCURRENT libs/script.js;
 sleep 5;
 # template html
 sed -i -e "s|Test:|Test -> $URL :|g"  summary.html;
