@@ -26,10 +26,20 @@ Update `.env` file using parameter here :
 | `SENDER`      | a email sender location in `FROM:`       |  `user@mail.com` |
 | `TITLE`      | Subject email       |    `Load test using K6` |
 
-## Usage Command Mode Running
+## Usage Command Mode Single
+
+update file `.env` define parameters
 
 ```shell
 sh exec.sh
+```
+
+## Usage Command Mode Multi
+
+Input list url to file `url.txt` and don't update param `ENV_URL` on `.env.template`. you can update `DURATION` , `CONCURRENT` , `SENDER` and `TITLE`
+
+```shell
+sh multi.sh
 ```
 
 <img width="858" alt="Screen Shot 2022-06-06 at 21 59 10" src="https://user-images.githubusercontent.com/4769529/172187422-90286649-1144-4553-b5c1-c9e53b5783eb.png">
