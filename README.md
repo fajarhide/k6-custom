@@ -12,6 +12,7 @@ A custom k6 reporting html and png send to email
 ### Preparation
 ```shell
 touch email.txt
+touch url.txt
 ```
 
 ### input email using format
