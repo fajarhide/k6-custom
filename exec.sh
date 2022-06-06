@@ -1,8 +1,11 @@
 #!/bin/bash
 
-URL=$1
-DURATION=$2
-CONCURRENT=$3
+# env
+URL=$(cat .env | grep  'URL=' | awk -F'=' '{print $2}')
+DURATION=$(cat .env | grep  'DURATION=' | awk -F'=' '{print $2}')
+CONCURRENT=$(cat .env | grep  'CONCURRENT=' | awk -F'=' '{print $2}')
+SENDER=$(cat .env | grep  'SENDER=' | awk -F'=' '{print $2}')
+TITLE=$(cat .env | grep  'TITLE=' | awk -F'=' '{print $2}')
 
 # run load test
 k6 run -e URL=$URL --duration $DURATION --vus $CONCURRENT script.js;
@@ -23,16 +26,14 @@ sleep 5;
 EMAIL=$(cat email.txt)
 sendmail -t <<EOT
 TO: $EMAIL
-FROM: <uptime@webarq.com>
-SUBJECT: Result Stats IIGF - $URL
+FROM: <$SENDER>
+SUBJECT: $TITLE - $URL
 MIME-Version: 1.0
-Content-Type: multipart/related;text/html;boundary="XYZ"
+Content-Type: multipart/related;boundary="XYZ"
 
 --XYZ
 Content-Type: text/html; charset=ISO-8859-15
 Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename=summary.html
-Content-Transfer-Encoding: base64
 
 <html>
 <head>
@@ -51,6 +52,7 @@ Content-Type: image/png;name="screenshot.png"
 Content-Transfer-Encoding: base64
 Content-ID: <part1.06090408.01060107>
 Content-Disposition: inline; filename="screenshot.png"
+Content-Disposition: attachment; filename="summary.html"
 
 $(base64 screenshot.png)
 --XYZ--

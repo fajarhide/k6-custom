@@ -14,16 +14,9 @@ touch email.txt
 echo "user1@email.com,user2@gmal.com" > email.txt
 ```
 
-## Usage
+### Parameters environment:
 
-Running using parameter in command line
-
-### Format :
-```shell
-sh exec.sh URL DURATION CONCURRENT
-```
-
-### Parameters:
+Update `.env` file using parameter here :
 
 `URL` is target website for load test, 
 example : `https://www.detik.com` or using path `https://www.detik.com/redaksi`
@@ -34,10 +27,16 @@ example : `5s` or `1m` or `1h`
 `CONCURRENT` is a number specifying the number to run concurrently, 
 example: `10` or `100`
 
-## Command Mode Running
+`SENDER` is a email sender location in `FROM:` 
+example: `user@mail.com`
+
+`TITLE` is Subject email 
+example: `Load test using K6`
+
+## Usage Command Mode Running
 
 ```shell
-sh exec.sh https://www.detik.com/redaksi 10s 10
+sh exec.sh
 ```
 
 
