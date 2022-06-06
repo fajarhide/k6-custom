@@ -2,6 +2,11 @@
 
 A custom k6 reporting html and png send to email
 
+## Requirement
+
+- [k6](https://k6.io)
+- [sendmail](https://linux.die.net/man/8/sendmail.sendmail)
+- [google-chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)
 ## Installation
 
 ### Preparation
