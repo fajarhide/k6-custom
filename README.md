@@ -22,7 +22,7 @@ echo "user1@email.com,user2@gmal.com" > email.txt
 
 ### input multi url
 ```shell
-echo -e "URL_1\nURL_2\nURL_3e" >> url.txt
+echo -e "URL_1\nURL_2\nURL_3" >> url.txt
 
 ```
 
