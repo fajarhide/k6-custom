@@ -43,7 +43,6 @@ Content-Type: image/png;name="screenshot.png"
 Content-Transfer-Encoding: base64
 Content-ID: <part1.06090408.01060107>
 Content-Disposition: inline; filename="screenshot.png"
-Content-Disposition: attachment; filename="summary.html"
 
 $(base64 screenshot.png)
 
